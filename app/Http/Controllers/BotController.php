@@ -40,7 +40,7 @@ class BotController extends Controller
         $callSenderApi->make($text->message('Você digitou: '. $message));
 
         $message = new Image($senderId);
-        $callSenderApi->make($message->message('http://fathomless-castle-56481.herokuapp.com/img/homer.gif')));
+        $callSenderApi->make($message->message('http://fathomless-castle-56481.herokuapp.com/img/homer.gif'));
 
         return '';
     }
