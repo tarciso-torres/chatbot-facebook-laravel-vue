@@ -8,6 +8,7 @@
 namespace App\Http\Controllers;
 
 use CodeBot\CallSendApi;
+use CodeBot\Message\Image;
 use CodeBot\Message\Text;
 use CodeBot\SenderRequest;
 use CodeBot\WebHook;
@@ -37,5 +38,8 @@ class BotController extends Controller
 
         $callSenderApi->make($text->message('Oii, eu sou um bot...'));
         $callSenderApi->make($text->message('Você digitou: '. $message));
+
+        $message = new Image($senderId);
+        $callSenderApi->make($text->message($message->message('http://fathomless-castle-56481.herokuapp.com/img/homer.gif')));
     }
 }
