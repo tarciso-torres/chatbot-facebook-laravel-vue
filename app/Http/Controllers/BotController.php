@@ -41,5 +41,7 @@ class BotController extends Controller
 
         $message = new Image($senderId);
         $callSenderApi->make($text->message($message->message('http://fathomless-castle-56481.herokuapp.com/img/homer.gif')));
+
+        return '';
     }
 }
