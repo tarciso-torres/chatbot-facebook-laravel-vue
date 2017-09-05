@@ -8,9 +8,11 @@
 namespace App\Http\Controllers;
 
 use CodeBot\CallSendApi;
+use CodeBot\Element\Button;
 use CodeBot\Message\Image;
 use CodeBot\Message\Text;
 use CodeBot\SenderRequest;
+use CodeBot\TemplatesMessage\ButtonsTemplate;
 use CodeBot\WebHook;
 use Illuminate\Http\Request;
 
@@ -41,6 +43,11 @@ class BotController extends Controller
 
         $message = new Image($senderId);
         $callSenderApi->make($message->message('http://fathomless-castle-56481.herokuapp.com/img/homer.gif'));
+
+        $message = new ButtonsTemplate($senderId);
+        $message->add(new Button('web_url', 'Code.Education', 'https://code.education'));
+        $message->add(new Button('web_url', 'Google', 'http://www.google.com'));
+        $callSenderApi->make($message->message('Que tal testarmos a abertura de um site?'));
 
         return '';
     }
