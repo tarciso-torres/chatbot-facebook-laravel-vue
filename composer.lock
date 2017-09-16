@@ -2020,16 +2020,16 @@
         },
         {
             "name": "tarciso-torres/code-facebook-bot-sdk",
-            "version": "v1.2.0",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tarciso-torres/code-facebook-bot-sdk.git",
-                "reference": "0647672a1b1e68391607a3a44df769cb8dcadfd6"
+                "reference": "c281607e2c3baf37e7fb5703657e508e9f7aa903"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tarciso-torres/code-facebook-bot-sdk/zipball/0647672a1b1e68391607a3a44df769cb8dcadfd6",
-                "reference": "0647672a1b1e68391607a3a44df769cb8dcadfd6",
+                "url": "https://api.github.com/repos/tarciso-torres/code-facebook-bot-sdk/zipball/c281607e2c3baf37e7fb5703657e508e9f7aa903",
+                "reference": "c281607e2c3baf37e7fb5703657e508e9f7aa903",
                 "shasum": ""
             },
             "require": {
@@ -2055,7 +2055,7 @@
                     "email": "tarcisoftorres@gmail.com"
                 }
             ],
-            "time": "2017-09-09T22:35:18+00:00"
+            "time": "2017-09-16T20:51:10+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
