@@ -8,11 +8,14 @@
 namespace App\Http\Controllers;
 
 use CodeBot\CallSendApi;
-use CodeBot\Element\Button;
 use CodeBot\Message\Image;
 use CodeBot\Message\Text;
 use CodeBot\SenderRequest;
+use CodeBot\Element\Button;
+use CodeBot\Element\Product;
 use CodeBot\TemplatesMessage\ButtonsTemplate;
+use CodeBot\TemplatesMessage\GenericTemplate;
+use CodeBot\TemplatesMessage\ListTemplate;
 use CodeBot\WebHook;
 use Illuminate\Http\Request;
 
@@ -48,6 +51,29 @@ class BotController extends Controller
         $message->add(new Button('web_url', 'Code.Education', 'https://code.education'));
         $message->add(new Button('web_url', 'Google', 'http://www.google.com'));
         $callSenderApi->make($message->message('Que tal testarmos a abertura de um site?'));
+
+        $button = new Button('web_url', null, 'https://angular.io/');
+        $product = new Product('Produto 1', 'https://cdn.worldvectorlogo.com/logos/angular-icon-1.svg', 'Curso de Angular', $button);
+        $button = new Button('web_url', null, 'http://www.php.net/');
+        $product2 = new Product('Produto 2', 'http://p9.storage.canalblog.com/95/52/388561/21464247.png', 'Curso de PHP', $button);
+
+        $template = new ListTemplate($senderId);
+        $template->add($product);
+        $template->add($product2);
+
+        $callSenderApi->make($template->message('qwe'));
+
+        $button = new Button('web_url', null, 'https://angular.io/');
+        $product = new Product('Produto 1', 'https://cdn.worldvectorlogo.com/logos/angular-icon-1.svg', 'Curso de Angular', $button);
+
+        $button = new Button('web_url', null, 'http://www.php.net/');
+        $product2 = new Product('Produto 2', 'http://p9.storage.canalblog.com/95/52/388561/21464247.png', 'Curso de PHP', $button);
+
+        $template = new GenericTemplate($senderId);
+        $template->add($product);
+        $template->add($product2);
+
+        $callSenderApi->make($template->message('qwe'));
 
         return '';
     }
